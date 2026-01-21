@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Design Aesthetiq Interior Design</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Design <span>Aesthetiq <img class="image-logo" src="logo.jpg" alt="logo" srcset="" width="50px" height="50px"></span></a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle mobile menu" title="Toggle menu">
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon" style="display: none;"></i>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Overlay for Sidebar -->
+            <div class="nav-overlay"></div>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="page-hero contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get In Touch</h1>
+                <p>Ready to transform your space? Contact our team to schedule a consultation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>We'd love to hear from you. Reach out to us through any of the following channels:</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Visit Our Studio</h3>
+                                <p>123 Design Aesthetiq, Buea, CM 00237</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Call Us</h3>
+                                <p>+237 670142124</p>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM WAT</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Email Us</h3>
+                                <p>info@aesthetiq.com</p>
+                                <p>We typically respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                                <p>Sunday: By appointment only</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="consultation">Design Consultation</option>
+                                <option value="project">New Project Inquiry</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="service">Service Question</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Project Budget</label>
+                            <select id="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-10k">Under 10,000FCFA</option>
+                                <option value="10k-25k">10,000FCFA - 25,000FCFA</option>
+                                <option value="25k-50k">25,000FCFA - 50,000FCFA</option>
+                                <option value="50k-100k">50,000FCFA - 100,000FCFA</option>
+                                <option value="over-100k">Over 100,000FCFA</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" rows="6" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" checked>
+                            <label for="newsletter">Subscribe to our newsletter for design tips and inspiration</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visit Our Studio</h2>
+                <p>Located in the heart of Buea's design district</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-info">
+                        <h3>Design Aesthetiq Studio</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Aesthetiq, Buea, CM 00237</p>
+                        <p><i class="fas fa-phone"></i> +237 670142124</p>
+                        <p><i class="fas fa-envelope"></i> info@aethetiq.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm | Sat: 10am-4pm</p>
+                    </div>
+                    <div class="map-image">
+                        <img src="images/buea.jpg" alt="Our Studio Location">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How do I get started with a design project?</h3>
+                    <p>Begin by scheduling a consultation through our contact form or by calling our studio. We'll discuss your vision, budget, and timeline before creating a customized proposal.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What is your design process?</h3>
+                    <p>Our process includes discovery consultation, concept development, design refinement, implementation, and final reveal. We guide you through each step to ensure your vision is realized.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you work with clients remotely?</h3>
+                    <p>Yes, we offer virtual design services for clients outside our local area. We use video calls, digital presentations, and detailed documentation to manage remote projects effectively.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What is your typical project timeline?</h3>
+                    <p>Timelines vary based on project scope, but most residential projects take 3-6 months from concept to completion. We provide detailed timelines during the consultation phase.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How do you handle project budgets?</h3>
+                    <p>We work within your specified budget and provide transparent cost estimates. Our fees are structured based on project scope, with options for hourly rates or flat project fees.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer sustainable design options?</h3>
+                    <p>Absolutely. We prioritize eco-friendly materials, energy-efficient solutions, and sustainable practices. We can help you achieve LEED certification or other sustainability goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Design <span>Aesthetiq</span></a>
+                    <p>Creating beautiful, functional spaces that inspire and delight. We transform houses into homes with thoughtful design and expert craftsmanship.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Aesthetiq, Buea, 00237</p>
+                        <p><i class="fas fa-phone"></i> +237 670142124</p>
+                        <p><i class="fas fa-envelope"></i> info@aesthetiq.com | basilleonora@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aesthetiq Interior Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="fontawesome/js/all.min.js"></script>
+</body>
+</html>

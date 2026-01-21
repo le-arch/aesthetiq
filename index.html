@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Aesthetiq | Interior Design Showcase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome/css/regular.min.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header and navigation-->
+     <header>
+        <div class="container header-container">
+             <a href="index.html" class="logo"> Design<span> Aesthetiq <img class="image-logo" src="logo.jpg" alt="logo" srcset="" width="50px" height="50px"></span> </a> 
+             
+             <!-- Mobile Menu Toggle Button -->
+             <button class="mobile-toggle" aria-label="Toggle mobile menu" title="Toggle menu">
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon" style="display: none;"></i>
+             </button>
+
+             <!-- Navigation Menu -->
+             <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+             </nav>
+             
+             <!-- Overlay for Sidebar -->
+             <!-- <div class="nav-overlay"></div>
+        </div> -->
+     </header>
+
+     <!--Hero section-->
+     <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Space Into A Masterpiece</h1>
+                <p>We create stunning interior designs that reflect your personality and lifestyle. From modern minimalism to classic elegance, our designs bring beauty and functionality to every home</p>
+                <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+                <a href="contact.html" class="btn btn-secondary">Book Consultation</a>
+            </div>
+        </div>
+     </section>
+
+     <!--Featured designs-->
+     <section class="featured-designs">
+        <div class="container"><div class="section-title">
+            <h2>Featured Designs</h2>
+            <p>A glimpse of our recent work</p>
+        </div>
+        <div class="design-grid">
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/living.jpg" alt="Modern Living Room">
+                    <div class="design-overlay">
+                        <a href="portfolio.html#residential" class="view-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="design-info">
+                    <h3>Urban Apartment</h3>
+                    <p>Contemporary living space in downtown Molyko</p>
+                    <div class="design-tags">
+                        <span>Residential</span>
+                        <span>Modern</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <div class="design-image">
+                    <img src="images/b2.jpg" alt="Modern Living Room">
+                    <div class="design-overlay">
+                        <a href="portfolio.html#residential" class="view-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="design-info">
+                    <h3>Modern Apartment</h3>
+                    <p>Contemporary living space in South</p>
+                    <div class="design-tags">
+                        <span>Residential</span>
+                        <span>Modern</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/office.jpg" alt="Modern Office">
+                        <div class="design-overlay">
+                            <a href="portfolio.html#commercial" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Tech Hub Office</h3>
+                        <p>Innovative workspace for creative professionals</p>
+                        <div class="design-tags">
+                            <span>Commercial</span>
+                            <span>Modern</span>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="design-card">
+                <div class="design-image">
+                    <img src="images/o5.jpg" alt="Modern Office">
+                    <div class="design-overlay">
+                        <a href="portfolio.html#residential" class="view-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="design-info">
+                    <h3>Simple Office</h3>
+                    <p>Personal office space in Molyko</p>
+                    <div class="design-tags">
+                        <span>Commercial</span>
+                        <span>Modern</span>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="design-card">
+                    <div class="design-image">
+                        <img src="images/dining.jpg" alt="Classic Dining">
+                        <div class="design-overlay">
+                            <a href="portfolio.html#classic" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="design-info">
+                        <h3>Victorian Elegance Dining</h3>
+                        <p>Traditional dining room with modern amenities</p>
+                        <div class="design-tags">
+                            <span>Residential</span>
+                            <span>Classic</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="text-center">
+            <a href="portfolio.html" class="btn btn-outline">View All Projects</a>
+        </div>
+    </div>
+     </section>
+
+     <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive interior design solutions</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Interior Design</h3>
+                    <p>Complete interior design services tailored to your personal style and functional needs.</p>
+                    <a href="services.html#interior-design" class="service-link">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Furniture Selection</h3>
+                    <p>Curated selection of furniture pieces that complement your space and lifestyle.</p>
+                    <a href="services.html#furniture" class="service-link">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Color Consultation</h3>
+                    <p>Expert guidance on color schemes that create the perfect mood for each room.</p>
+                    <a href="services.html#color-consultation" class="service-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Preview -->
+    <section class="testimonials-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about us</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Design Aesthetiq transformed our outdated house into a modern home we absolutely love. Their attention to detail exceeded our expectations."</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="images/cust2.jpg" alt="Sarah">
+                        <div>
+                            <h4>Sarah Eposi</h4>
+                            <span>Homeowner, Bokwango</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Working with Design Aesthetiq was a pleasure from start to finish. They understood our vision and brought it to life with stunning results."</p>
+                    </div>
+                    <div class="client-info">
+                        <img src="images/cust3.jpg" alt="Michael">
+                        <div>
+                            <h4>Michael Tabi</h4>
+                            <span>Apartment Owner, Bongo Square</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Design <span>Aesthetiq</span></a>
+                    <p>Creating beautiful, functional spaces that inspire and delight. We transform houses into homes with thoughtful design and expert craftsmanship.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Aesthetiq, Buea, 00237</p>
+                        <p><i class="fas fa-phone"></i> +237 670142124</p>
+                        <p><i class="fas fa-envelope"></i> info@aesthetiq.com | basilleonora@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aesthetiq Interior Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="fontawesome/js/all.min.js"></script>
+    <script src="fontawesome/js/brands.min.js"></script>
+    <script src="fontawesome/js/fontawesome.min.js"></script>
+    <script src="fontawesome/js/regular.min.js"></script>
+    <script src="fontawesome/js/solid.min.js"></script>
+</body>
+</html>

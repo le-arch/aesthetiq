@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Design Aesthetiq Interior Design</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Design <span>Aesthetiq <img class="image-logo" src="logo.jpg" alt="logo" srcset="" width="50px" height="50px"></span></a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle mobile menu" title="Toggle menu">
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon" style="display: none;"></i>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Overlay for Sidebar -->
+            <div class="nav-overlay"></div>
+        </div>
+    </header>
+
+    <!-- Portfolio Hero -->
+    <section class="page-hero portfolio-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Design Portfolio</h1>
+                <p>Explore our curated collection of 30+ interior design projects that showcase our creativity, attention to detail, and passion for beautiful spaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="portfolio-filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects (30)</button>
+                    <button class="filter-btn" data-filter="residential">Residential (12)</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial (12)</button>
+                    <button class="filter-btn" data-filter="modern">Modern (6)</button>
+                    <button class="filter-btn" data-filter="classic">Classic (6)</button>
+                    <button class="filter-btn" data-filter="minimalist">Minimalist (6)</button>
+                </div>
+                
+                <div class="filter-search">
+                    <input type="text" id="portfolio-search" placeholder="Search projects...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid-section">
+        <div class="container">
+            <div id="portfolio-grid" class="portfolio-grid">
+                <!-- Project items will be loaded dynamically -->
+            </div>
+            
+            <div class="load-more">
+                <button id="load-more-btn" class="btn btn-outline">Load More Projects</button>
+                <p class="results-count" id="results-count">Showing 4 of 30 projects</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Design <span>Aesthetiq</span></a>
+                    <p>Creating beautiful, functional spaces that inspire and delight. We transform houses into homes with thoughtful design and expert craftsmanship.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Aesthetiq, Buea, 00237</p>
+                        <p><i class="fas fa-phone"></i> +237 670142124</p>
+                        <p><i class="fas fa-envelope"></i> info@aesthetiq.com | basilleonora@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aesthetiq Interior Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="fontawesome/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+/* portfolio.css - Portfolio Page Specific Styles */
+.portfolio-hero {
+    background-image: url('../images/livingroom.jpg');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                     url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80'); */
+}
+
+/* Portfolio Filter */
+.portfolio-filter-section {
+    padding: 40px 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray);
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid var(--gray);
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--dark-color);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.filter-search {
+    position: relative;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--gray);
+    border-radius: 30px;
+    background-color: white;
+    padding: 0 15px;
+}
+
+.filter-search input {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: transparent;
+}
+
+.filter-search input:focus {
+    outline: none;
+}
+
+.filter-search i {
+    color: #999;
+    pointer-events: auto;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: var(--transition);
+}
+
+.filter-search i:hover {
+    color: var(--primary-color);
+}
+
+/* Portfolio Grid */
+.portfolio-grid-section {
+    padding: 60px 0;
+    background-color: var(--light-color);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 350px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--white);
+    padding: 30px 20px 20px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.portfolio-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.portfolio-tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.view-project {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.portfolio-item:hover .view-project {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.load-more {
+    text-align: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1100;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal-content {
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: var(--white);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    animation: modalFade 0.5s ease-out;
+}
+
+@keyframes modalFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    border: none;
+}
+
+.close-modal:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.modal-header {
+    margin-bottom: 30px;
+}
+
+.modal-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.modal-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.modal-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.modal-image:hover {
+    transform: scale(1.02);
+}
+
+.modal-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.detail-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.modal-description {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.project-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--gray);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tours | Design Aesthetiq Interior Design</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tours.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Design <span>Aesthetiq <img src="logo.jpg" alt="logo" srcset="" width="50px" height="50px" class="image-logo"></span></a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle mobile menu" title="Toggle menu">
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon" style="display: none;"></i>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="tours.html" class="active">Tours</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Overlay for Sidebar -->
+            <div class="nav-overlay"></div>
+        </div>
+    </header>
+
+    <!-- Tours Hero -->
+    <section class="page-hero tours-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Immersive Virtual Tours</h1>
+                <p>Step inside our most stunning designs with interactive 360° virtual experiences</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tour -->
+    <section class="featured-tour">
+        <div class="container">
+            <div class="tour-header">
+                <h2>Featured Tour: Modern Limbe Penthouse</h2>
+                <p>Explore this breathtaking 360° tour of our latest luxury penthouse project in Cameroon</p>
+            </div>
+            
+            <div class="tour-container">
+                <div class="tour-viewer" id="featuredTour">
+                    <div class="tour-navigation">
+                        <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div class="tour-scene">
+                            <img src="images/pent2.jpg" alt="Living Room View" class="active-scene">
+                            <div class="scene-hotspots">
+                                <div class="hotspot" data-target="kitchen">Kitchen</div>
+                                <div class="hotspot" data-target="bedroom">Bedroom</div>
+                                <div class="hotspot" data-target="bathroom">Bathroom</div>
+                            </div>
+                        </div>
+                        <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <div class="tour-controls">
+                        <button class="control-btn" id="fullscreenBtn">
+                            <i class="fas fa-expand"></i> Fullscreen
+                        </button>
+                        <button class="control-btn" id="vrModeBtn">
+                            <i class="fas fa-vr-cardboard"></i> VR Mode
+                        </button>
+                        <button class="control-btn" id="audioTourBtn">
+                            <i class="fas fa-volume-up"></i> Audio Guide
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="tour-info">
+                    <h3>Tour Information</h3>
+                    <div class="tour-details">
+                        <div class="detail-item">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <h4>Project Type</h4>
+                                <p>Luxury Residential Penthouse</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <div>
+                                <h4>Square Footage</h4>
+                                <p>3,500 sq ft</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Bastos, Yaoundé, Cameroon</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Completion Date</h4>
+                                <p>December 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tour-description">
+                        <h4>About This Space</h4>
+                        <p>This modern penthouse features floor-to-ceiling windows with panoramic city views, custom Italian furniture, smart home automation, and sustainable materials throughout. The open-concept design creates seamless flow between living spaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Virtual Tours -->
+    <section class="all-tours">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore All Virtual Tours</h2>
+                <p>Click on any tour to start your immersive experience with VR videos and audio guides</p>
+            </div>
+            
+            <div class="tours-grid" id="toursContainer">
+                <!-- Tours will be loaded here via JavaScript -->
+                <div class="tour-loading">
+                    <div class="loading-spinner">
+                        <i class="fas fa-compass fa-spin"></i>
+                    </div>
+                    <p>Loading virtual tours...</p>
+                </div>
+            </div>
+            
+            <div class="tour-categories">
+                <div class="category-filter">
+                    <button class="category-btn active" data-category="all" data-count="12">All Tours (12)</button>
+                    <button class="category-btn" data-category="residential" data-count="3">Residential (3)</button>
+                    <button class="category-btn" data-category="commercial" data-count="3">Commercial (3)</button>
+                    <button class="category-btn" data-category="luxury" data-count="3">Luxury (3)</button>
+                    <button class="category-btn" data-category="modern" data-count="3">Modern (3)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VR Experience Section -->
+    <section class="vr-experience">
+        <div class="container">
+            <div class="vr-content">
+                <div class="vr-text">
+                    <h2>Virtual Reality Experience</h2>
+                    <p>For the ultimate immersive experience, use your VR headset to walk through our designs in virtual reality. Feel like you're actually there with our 360° videos!</p>
+                    <div class="vr-features">
+                        <div class="vr-feature">
+                            <i class="fas fa-vr-cardboard"></i>
+                            <h4>Compatible with most VR headsets</h4>
+                        </div>
+                        <div class="vr-feature">
+                            <i class="fas fa-video"></i>
+                            <h4>High-quality 360° VR videos</h4>
+                        </div>
+                        <div class="vr-feature">
+                            <i class="fas fa-volume-up"></i>
+                            <h4>Professional audio guides</h4>
+                        </div>
+                        <div class="vr-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile-friendly experience</h4>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="vrSetupBtn">How to Setup VR</button>
+                </div>
+                <div class="vr-image">
+                    <img src="images/game.jpg" alt="VR Experience">
+                    <div class="vr-overlay">
+                        <i class="fas fa-vr-cardboard"></i>
+                        <h3>Experience Design in VR</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Guide Section -->
+    <section class="audio-guide-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Audio Guides</h2>
+                <p>Listen to expert narration as you explore each space</p>
+            </div>
+            <div class="audio-content">
+                <div class="audio-image">
+                    <img src="images/mediacon1.jpg" alt="Audio Guide">
+                </div>
+                <div class="audio-info">
+                    <h3>Enhanced Tour Experience</h3>
+                    <p>Each virtual tour comes with a professional audio guide that provides:</p>
+                    <ul class="audio-features">
+                        <li><i class="fas fa-check-circle"></i> Detailed design explanations</li>
+                        <li><i class="fas fa-check-circle"></i> Architectural insights</li>
+                        <li><i class="fas fa-check-circle"></i> Material and furniture details</li>
+                        <li><i class="fas fa-check-circle"></i> Design philosophy behind each space</li>
+                        <li><i class="fas fa-check-circle"></i> Ambient background music</li>
+                    </ul>
+                    <div class="audio-controls-demo">
+                        <button class="btn button" id="audioDemoBtn">
+                            <i class="fas fa-play-circle"></i> Try Audio Demo
+                        </button>
+                        <small>Experience a sample of our professional audio narration</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cameroonian Locations Section -->
+    <section class="locations-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Cameroon Through Design</h2>
+                <p>Discover our projects across beautiful locations in Cameroon</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <img src="images/ex1.jpg" alt="Yaoundé">
+                    <div class="location-info">
+                        <h3>Yaoundé</h3>
+                        <p>Capital city projects</p>
+                        <span class="location-count">3 Tours</span>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <img src="images/ex2.jpg" alt="Douala">
+                    <div class="location-info">
+                        <h3>Douala</h3>
+                        <p>Economic capital designs</p>
+                        <span class="location-count">2 Tours</span>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <img src="images/ex3.jpg" alt="Buea">
+                    <div class="location-info">
+                        <h3>Buea</h3>
+                        <p>Mountain view residences</p>
+                        <span class="location-count">2 Tours</span>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <img src="images/ex4.jpg" alt="Other Locations">
+                    <div class="location-info">
+                        <h3>Other Regions</h3>
+                        <p>Limbe, Bamenda, Kribi</p>
+                        <span class="location-count">5 Tours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Design <span>Aesthetiq</span></a>
+                    <p>Creating beautiful, functional spaces that inspire and delight. We transform houses into homes with thoughtful design and expert craftsmanship.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tours.html">Virtual Tours</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-tours">
+                    <h3>Popular Tours</h3>
+                    <ul>
+                        <li><a href="#" data-tour-id="1">Modern Limbe Penthouse</a></li>
+                        <li><a href="#" data-tour-id="4">Yaoundé Corporate Offices</a></li>
+                        <li><a href="#" data-tour-id="7">Mount Cameroon Luxury Lodge</a></li>
+                        <li><a href="#" data-tour-id="11">Minimalist Buea Apartment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Aesthetiq Buea, Cameroon</p>
+                        <p><i class="fas fa-phone"></i> +237 670 142 124</p>
+                        <p><i class="fas fa-envelope"></i> info@aesthetiq.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elegant Living Interior Design. All rights reserved. | Designed with <i class="fas fa-heart"></i> in Cameroon</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Demo Modal -->
+    <div id="audioDemoModal" class="audio-demo-modal">
+        <div class="audio-demo-modal-content">
+            <span class="close-audio-demo">&times;</span>
+            <div class="audio-demo-body">
+                <h3>Audio Guide Demo</h3>
+                <div class="audio-player-demo">
+                    <audio id="audioElement" src="audio/audio.mp3"></audio>
+                    <div class="player-controls">
+                        <button id="playPauseBtn" class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="time-info">
+                            <span id="currentTime">0:00</span> / <span id="durationTime">0:00</span>
+                        </div>
+                        <button id="muteBtn" class="mute-btn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    <div class="volume-control">
+                        <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                    </div>
+                </div>
+                <div class="audio-description">
+                    <p>Experience a sample of our professional audio narration. Listen as our design experts guide you through one of our featured spaces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tour Viewer Modal -->
+    <div id="tourModal" class="tour-modal">
+        <div class="tour-modal-content">
+            <span class="close-tour-modal">&times;</span>
+            <div class="tour-modal-body">
+                <!-- Tour content will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- VR Setup Modal -->
+    <div id="vrSetupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>How to Setup VR Experience</h2>
+            <div class="vr-setup-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Device</h3>
+                    <p>Our VR tours work with:</p>
+                    <ul>
+                        <li>VR Headsets (Oculus, HTC Vive)</li>
+                        <li>Cardboard VR viewers</li>
+                        <li>Desktop computers (mouse drag)</li>
+                        <li>Mobile devices (touch swipe)</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Prepare Your Equipment</h3>
+                    <p>For best experience:</p>
+                    <ul>
+                        <li>Use headphones for spatial audio</li>
+                        <li>Ensure stable internet connection</li>
+                        <li>Enable fullscreen mode</li>
+                        <li>Allow autoplay in browser settings</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Your Tour</h3>
+                    <p>Once you're ready:</p>
+                    <ul>
+                        <li>Click the VR button in any tour</li>
+                        <li>Use arrow keys or swipe to navigate</li>
+                        <li>Enable audio guide for narration</li>
+                        <li>Click hotspots for room details</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="startVrDemo">Start VR Demo</button>
+        </div>
+    </div>
+
+    <!-- Audio Demo Modal -->
+    <div id="audioDemoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Audio Guide Demo</h2>
+            <div class="audio-demo">
+                <div class="audio-player">
+                    <div class="audio-info">
+                        <h3>Design Philosophy: Modern Minimalism</h3>
+                        <p>Sample from our "Minimalist Buea Apartment" tour</p>
+                    </div>
+                    <div class="audio-controls">
+                        <button id="playPauseBtn" class="audio-control">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">
+                            <span class="current-time">0:00</span> / <span class="total-time">1:30</span>
+                        </div>
+                        <button id="muteBtn" class="audio-control">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="audio-transcript">
+                    <h4>Transcript:</h4>
+                    <p>"Welcome to our minimalist apartment in Buea. Notice how we've used clean lines and open spaces to create a sense of tranquility. The Japanese-inspired design emphasizes functionality without sacrificing beauty. Each piece of furniture serves multiple purposes, maximizing the 2,200 square feet of living space..."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/tours.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="fontawesome/js/all.min.js"></script>
+</body>
+</html>

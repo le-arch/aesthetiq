@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Shop | Design Aesthetiq Interior Design</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Design <span>Aesthetiq <img class="image-logo" src="logo.jpg" alt="logo" srcset="" width="50px" height="50px"></span></a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle mobile menu" title="Toggle menu">
+                <i class="fas fa-bars menu-icon"></i>
+                <i class="fas fa-times close-icon" style="display: none;"></i>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                    <li class="cart-icon-container">
+                        <a href="#cart" class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Overlay for Sidebar -->
+            <div class="nav-overlay"></div>
+        </div>
+    </header>
+
+    <!-- Shop Hero -->
+    <section class="page-hero shop-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Curated Design Collection</h1>
+                <p>Shop our handpicked selection of furniture, decor, and design accessories</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Categories -->
+    <section class="shop-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <div class="category-card" data-category="furniture">
+                    <div class="category-image">
+                        <img src="images/sofa.jpg" alt="Furniture">
+                    </div>
+                    <div class="category-content">
+                        <h3>Furniture</h3>
+                        <p>Premium seating, tables & storage</p>
+                        <span class="category-count">19 items</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="lighting">
+                    <div class="category-image">
+                        <img src="images/lamp.jpg" alt="Lighting">
+                    </div>
+                    <div class="category-content">
+                        <h3>Lighting</h3>
+                        <p>Statement lamps & fixtures</p>
+                        <span class="category-count">15 items</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="decor">
+                    <div class="category-image">
+                        <img src="images/decor.jpg" alt="Decor">
+                    </div>
+                    <div class="category-content">
+                        <h3>Decor</h3>
+                        <p>Art, textiles & accessories</p>
+                        <span class="category-count">25 items</span>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="rugs">
+                    <div class="category-image">
+                        <img src="images/rug.jpg" alt="Rugs">
+                    </div>
+                    <div class="category-content">
+                        <h3>Rugs</h3>
+                        <p>Handwoven & designer rugs</p>
+                        <span class="category-count">4 items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Items Display -->
+    <section id="categoryItemsSection" class="category-items-section" style="display: none;">
+        <div class="container">
+            <div class="category-items-header">
+                <button id="closeCategoryItems" class="close-category-btn">&times;</button>
+                <h2 id="categoryItemsTitle">Category Items</h2>
+            </div>
+            <div class="category-items-grid" id="categoryItemsGrid">
+                <!-- Category items will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Our design team's top picks this season</p>
+            </div>
+             <div class="products-grid" id="productsContainer">
+            <!-- Featured products slider will be loaded here -->
+        </div>
+           
+           </div>
+    </section>
+
+    <!-- Shop Filter & Sort -->
+    <section class="shop-filters">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-sidebar">
+                    <h3>Filter By</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="10000" value="10000">
+                            <div class="price-labels">
+                                <span>0FCFA</span>
+                                <span id="maxPriceLabel">100,000FCFA+</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="category-list">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="furniture" checked>
+                                <span>Furniture</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="lighting" checked>
+                                <span>Lighting</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="decor" checked>
+                                <span>Decor</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="rugs" checked>
+                                <span>Rugs</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Style</h4>
+                        <div class="style-tags">
+                            <span class="style-tag" data-style="modern">Modern</span>
+                            <span class="style-tag" data-style="midcentury">Mid-Century</span>
+                            <span class="style-tag" data-style="traditional">Traditional</span>
+                            <span class="style-tag" data-style="industrial">Industrial</span>
+                            <span class="style-tag" data-style="scandinavian">Scandinavian</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline" id="applyFilters">Apply Filters</button>
+                    <button class="btn btn-text" id="clearFilters">Clear All</button>
+                </div>
+                
+                <div class="products-container">
+                    <div class="products-header">
+                        <h3>All Products</h3>
+                        <div class="sort-options">
+                            <select id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest First</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                      <!-- Add view toggle controls -->
+                    <div class="view-options"></div>
+                    <div class="products-list" id="allProductsContainer">
+                        <!-- All products will be loaded here -->
+                    </div>
+                    
+                    <div class="pagination-info">
+                        <span id="currentPageInfo">Page 1 of 1</span>
+                        <span id="productRangeInfo">Showing 0-0 of 0 products</span>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn" id="prevPage">Previous</button>
+                        <div class="page-numbers" id="pageNumbers">
+                            <!-- Page numbers will be generated here -->
+                        </div>
+                        <button class="pagination-btn" id="nextPage">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">0.00FCFA</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span id="cartShipping">Calculated at checkout</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="cartTotal">0.00FCFA</span>
+            </div>
+            
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="btn btn-outline continue-btn" id="continueShopping">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="checkout-modal">
+        <div class="checkout-modal-content">
+            <span class="close-checkout-modal">&times;</span>
+            <div class="checkout-modal-body">
+                <!-- Checkout form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Design <span>Aesthetiq</span></a>
+                    <p>Creating beautiful, functional spaces that inspire and delight. We transform houses into homes with thoughtful design and expert craftsmanship.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tours.html">Tours</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+               <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Aesthetiq, Buea, 00237</p>
+                        <p><i class="fas fa-phone"></i> +237 670142124</p>
+                        <p><i class="fas fa-envelope"></i> info@aesthetiq.com | basilleonora@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aesthetiq Interior Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="fontawesome/js/all.min.js"></script>
+</body>
+</html>
