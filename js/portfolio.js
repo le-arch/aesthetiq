@@ -935,7 +935,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Load more button event listener
+        // Load more button event listener:
         if (loadMoreBtn) {
             loadMoreBtn.addEventListener('click', function() {
                 displayCount += itemsPerLoad;
