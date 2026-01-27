@@ -458,6 +458,352 @@
         </div>
     </div>
 
+
+    <!-- Tours Data (moved from JavaScript) -->
+<script type="text/javascript" id="tours-data">
+    window.virtualTours = [
+        // Residential Category
+        {
+            id: 1,
+            title: "Modern Limbe Penthouse",
+            category: ["residential", "luxury", "modern"],
+            description: "Experience this breathtaking 360° tour of our latest luxury penthouse project.",
+            scenes: [
+                "images/pent1.jpg",
+                "images/ex2.jpg",
+                "images/9.jpg"
+            ],
+            roomSpecificImages: {
+                kitchen: "images/k1.jpg",
+                bedroom: "images/12.jpg",
+                bathroom: "images/t2.jpg"
+            },
+            details: {
+                type: "Luxury Residential Penthouse",
+                area: "3,500 sq ft",
+                location: "Bastos, Yaoundé, Cameroon",
+                completion: "December 2023",
+                style: "Modern Contemporary"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v1.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "15-20 minutes"
+        },
+        {
+            id: 2,
+            title: "Coastal Limbe Retreat",
+            category: ["residential", "luxury"],
+            description: "Step into this stunning beachfront property with indoor-outdoor living and ocean views.",
+            scenes: [
+                "images/beach.jpg",
+                "images/lake3.jpg",
+                "images/3.jpg"
+            ],
+            roomSpecificImages: {
+                kitchen: "images/french3.jpg",
+                bedroom: "images/b1.jpg",
+                bathroom: "images/t3.jpg"
+            },
+            details: {
+                type: "Beachfront Villa",
+                area: "4,200 sq ft",
+                location: "Limbe, Southwest Cameroon",
+                completion: "August 2023",
+                style: "Coastal Contemporary"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v2.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "20-25 minutes"
+        },
+        {
+            id: 3,
+            title: "Traditional Bamenda Villa",
+            category: ["residential", "luxury"],
+            description: "Experience traditional Cameroonian architecture with modern amenities.",
+            scenes: [
+                "../images/ex4.jpg",
+                "../images/5.jpg",
+                "../images/background.jpg"
+            ],
+            roomSpecificImages: {
+                kitchen: "images/kitchen.jpg",
+                bedroom: "images/b2.jpg",
+                bathroom: "images/t4.jpg"
+            },
+            details: {
+                type: "Traditional Villa",
+                area: "3,800 sq ft",
+                location: "Bamenda, Northwest Cameroon",
+                completion: "January 2024",
+                style: "Traditional Cameroonian"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v3.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "18-22 minutes"
+        },
+        // Commercial Category - FIXED
+        {
+            id: 4,
+            title: "Yaoundé Corporate Offices",
+            category: ["commercial", "modern", "luxury"],
+            description: "State-of-the-art corporate office space in Cameroon's capital.",
+            scenes: [
+                "images/cop1.jpg",
+                "images/o1.jpg",
+                "images/office.jpg"
+            ],
+            roomSpecificImages: {
+                conference: "images/image4.jpg",
+                lobby: "images/loby1.jpg",
+                workspace: "images/cowork3.jpg"
+            },
+            details: {
+                type: "Corporate Offices",
+                area: "12,500 sq ft",
+                location: "Centre Region, Yaoundé, Cameroon",
+                completion: "October 2023",
+                style: "Modern Corporate"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v4.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "25-30 minutes"
+        },
+        {
+            id: 5,
+            title: "Douala Luxury Boutique Hotel",
+            category: ["commercial", "luxury"],
+            description: "Five-star boutique hotel design with African contemporary aesthetics.",
+            scenes: [
+                "images/3.jpg",
+                "images/8.jpg",
+                "images/10.jpg"
+            ],
+            roomSpecificImages: {
+                lobby: "images/loby2.jpg",
+                suite: "images/image4.jpg",
+                restaurant: "images/cafe.jpg"
+            },
+            details: {
+                type: "Boutique Hotel",
+                area: "25,000 sq ft",
+                location: "Akwa, Douala, Cameroon",
+                completion: "September 2023",
+                style: "African Contemporary Luxury"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v5.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "30-35 minutes"
+        },
+        {
+            id: 6,
+            title: "Buea Tech Hub Workspace",
+            category: ["commercial", "modern"],
+            description: "Innovative co-working space designed for tech startups.",
+            scenes: [
+                "images/o4.jpg",
+                "images/office1.jpg",
+                "images/office.jpg"
+            ],
+            roomSpecificImages: {
+                workspace: "images/des1.jpg",
+                meeting: "images/des.jpg",
+                lounge: "images/image1.jpg"
+            },
+            details: {
+                type: "Tech Workspace",
+                area: "8,500 sq ft",
+                location: "Molyko, Buea, Cameroon",
+                completion: "July 2023",
+                style: "Modern Industrial"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v6.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "20-25 minutes"
+        },
+        // Luxury Category
+        {
+            id: 7,
+            title: "Mount Cameroon Luxury Lodge",
+            category: ["luxury", "residential"],
+            description: "Exclusive mountain retreat with breathtaking views.",
+            scenes: [
+                "images/mount1.jpg",
+                "images/t6.jpg",
+                "images/mount3.jpg"
+            ],
+            roomSpecificImages: {
+                master: "images/bedroom.jpg",
+                dining: "images/dining.jpg",
+                patio: "images/rooftop2.jpg"
+            },
+            details: {
+                type: "Mountain Lodge",
+                area: "5,500 sq ft",
+                location: "Buea, Southwest Cameroon",
+                completion: "May 2023",
+                style: "Luxury Mountain Retreat"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v7.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "22-28 minutes"
+        },
+        {
+            id: 8,
+            title: "Limbé Oceanfront Estate",
+            category: ["luxury", "residential"],
+            description: "Ultimate luxury living with private beach access.",
+            scenes: [
+                "images/image7.jpg",
+                "images/image8.jpg",
+                "images/l3.jpg"
+            ],
+            roomSpecificImages: {
+                pool: "images/pool.jpg",
+                living: "images/h1.jpg",
+                bedroom: "images/b3.jpg"
+            },
+            details: {
+                type: "Oceanfront Estate",
+                area: "6,800 sq ft",
+                location: "Limbe, Southwest Cameroon",
+                completion: "April 2023",
+                style: "Ultra-Luxury Coastal"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v9.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "28-35 minutes"
+        },
+        {
+            id: 9,
+            title: "Yaoundé Presidential Suite",
+            category: ["luxury", "commercial"],
+            description: "Most luxurious hotel suite in Central Africa.",
+            scenes: [
+                "images/livingroom.jpg",
+                "images/t6.jpg",
+                "images/13.jpg"
+            ],
+            roomSpecificImages: {
+                suite: "images/suite.jpg",
+                bathroom: "images/bath2.jpg",
+                balcony: "images/bal1.jpg"
+            },
+            details: {
+                type: "Presidential Hotel Suite",
+                area: "3,200 sq ft",
+                location: "Yaoundé, Cameroon",
+                completion: "February 2023",
+                style: "Ultimate Luxury"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v8.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "25-30 minutes"
+        },
+        // Modern Category
+        {
+            id: 10,
+            title: "Urban Loft Studio Douala",
+            category: ["modern", "residential"],
+            description: "Explore this sleek urban loft with industrial design elements.",
+            scenes: [
+                "images/image3.jpg",
+                "images/loft3.jpg",
+                "images/11.jpg"
+            ],
+            roomSpecificImages: {
+                kitchen: "images/d2.jpg",
+                bedroom: "images/b5.jpg",
+                bathroom: "images/bath1.jpg"
+            },
+            details: {
+                type: "Urban Loft",
+                area: "1,800 sq ft",
+                location: "Bonapriso, Douala, Cameroon",
+                completion: "June 2023",
+                style: "Industrial Modern"
+            },
+            vrCompatible: false,
+            vrVideo: "videos/v10.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "10-15 minutes"
+        },
+        {
+            id: 11,
+            title: "Minimalist Buea Apartment",
+            category: ["modern", "residential", "luxury"],
+            description: "Experience the serenity of Japanese minimalist design in this Buea apartment.",
+            scenes: [
+               "images/l2.jpg",
+                "images/mono3.jpg",
+                "images/smarthome.jpg"
+            ],
+            roomSpecificImages: {
+                kitchen: "images/m3.jpg",
+                bedroom: "images/b3.jpg",
+                bathroom: "images/bath.jpg"
+            },
+            details: {
+                type: "Modern Apartment",
+                area: "2,200 sq ft",
+                location: "Molyko, Buea, Cameroon",
+                completion: "March 2023",
+                style: "Japanese Minimalist"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v11.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "15-20 minutes"
+        },
+        {
+            id: 12,
+            title: "Contemporary Kribi Residence",
+            category: ["modern", "residential"],
+            description: "Modern beachside living with panoramic ocean views.",
+            scenes: [
+               "images/houses.jpg",
+                "images/g4.jpg",
+                "images/b3.jpg"
+            ],
+            roomSpecificImages: {
+                kitchen: "images/d1.jpg",
+                bedroom: "images/b6.jpg",
+                bathroom: "images/bath1.jpg"
+            },
+            details: {
+                type: "Beach Residence",
+                area: "3,200 sq ft",
+                location: "Kribi, South Cameroon",
+                completion: "November 2023",
+                style: "Contemporary Coastal"
+            },
+            vrCompatible: true,
+            vrVideo: "videos/v12.mp4",
+            audioGuide: true,
+            audioFile: "audio/audio.mp3",
+            duration: "16-20 minutes"
+        }
+    ];
+</script>
     <script src="js/main.js"></script>
     <script src="js/tours.js"></script>
     <script src="js/darkmode.js"></script>

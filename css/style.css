@@ -112,8 +112,6 @@ header {
 
 .image-logo{
     border-radius: 50%;
-    top: 10px;
-    bottom: auto;
     position: relative;
     animation: spin 3s linear infinite;
     
