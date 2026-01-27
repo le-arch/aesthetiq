@@ -410,15 +410,6 @@
     color: var(--secondary-color);
 }
 
-/* Add to blog.css */
-.no-posts {
-    text-align: center;
-    padding: 40px;
-    grid-column: 1 / -1;
-    font-size: 1.2rem;
-    color: #666;
-}
-
 /* Dark mode styles */
 body.dark-mode {
     background-color: #1a1a1a;
