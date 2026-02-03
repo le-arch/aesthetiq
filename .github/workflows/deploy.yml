@@ -1,145 +1,12 @@
-name: Deploy Aesthetiq Website
+name: Deploy Aesthetiq
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-env:
-  REPO_NAME: aesthetiq
-  REPO_OWNER: le-arch
-  SITE_URL: https://le-arch.github.io/aesthetiq/
 
 jobs:
-  validate:
-    name: Validate Website
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}
-
-    - name: Validate essential files
-      run: |
-        echo "🔍 Validating aesthetiq website files..."
-        echo "Repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}"
-        echo ""
-        
-        # Check for required files
-        REQUIRED_FILES=("index.html" "style.css")
-        
-        for file in "${REQUIRED_FILES[@]}"; do
-          if [ -f "$file" ]; then
-            echo "✅ Found: $file"
-          else
-            echo "❌ Missing: $file"
-            # Try to find similar files
-            find . -name "*${file##*.}" -type f | head -3 | while read found; do
-              echo "   ↳ Found similar: $found"
-            done
-          fi
-        done
-        
-        # Special check for JavaScript files
-        JS_FILES=$(find . -name "*.js" -type f | wc -l)
-        if [ "$JS_FILES" -gt 0 ]; then
-          echo "✅ Found $JS_FILES JavaScript files"
-        else
-          echo "ℹ️  No JavaScript files found (this is OK for static sites)"
-        fi
-
-    - name: Check HTML structure
-      run: |
-        echo "📄 Analyzing HTML structure..."
-        
-        if [ -f "index.html" ]; then
-          echo "Checking index.html..."
-          
-          # Check for essential HTML elements
-          if grep -q "<!DOCTYPE html>" index.html; then
-            echo "✅ DOCTYPE: HTML5"
-          else
-            echo "⚠️  Warning: Missing or incorrect DOCTYPE"
-          fi
-          
-          if grep -q "<html" index.html; then
-            echo "✅ Found <html> tag"
-          else
-            echo "❌ Error: Missing <html> tag"
-          fi
-          
-          if grep -q "<head" index.html; then
-            echo "✅ Found <head> section"
-          else
-            echo "❌ Error: Missing <head> section"
-          fi
-          
-          if grep -q "<body" index.html; then
-            echo "✅ Found <body> section"
-          else
-            echo "❌ Error: Missing <body> section"
-          fi
-          
-          # Check for title
-          if grep -q "<title>" index.html; then
-            title=$(grep -o '<title>[^<]*</title>' index.html | sed 's/<title>//;s/<\/title>//')
-            echo "✅ Page title: \"$title\""
-          else
-            echo "⚠️  Warning: Missing <title> tag"
-          fi
-          
-          # Check for viewport meta tag (important for mobile)
-          if grep -q "viewport" index.html; then
-            echo "✅ Viewport meta tag found"
-          else
-            echo "⚠️  Warning: Missing viewport meta tag (add: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">)"
-          fi
-        else
-          echo "❌ Cannot check HTML: index.html not found"
-        fi
-
-    - name: Check file sizes and structure
-      run: |
-        echo "📊 File analysis..."
-        echo ""
-        echo "Project structure:"
-        find . -maxdepth 2 -type f -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.json" | sort
-        
-        echo ""
-        echo "Large files (>500KB):"
-        find . -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.jpg" -o -name "*.png" -o -name "*.gif" \) -size +500k 2>/dev/null | while read file; do
-          size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
-          echo "⚠️  $file (${size} bytes)"
-        done || echo "No large files found"
-
-    - name: Generate validation report
-      run: |
-        echo "📋 VALIDATION REPORT"
-        echo "==================="
-        echo "Repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}"
-        echo "Timestamp: $(date)"
-        echo "Branch: ${{ github.ref }}"
-        echo ""
-        echo "SUMMARY"
-        echo "-------"
-        echo "✅ Basic file structure validated"
-        echo "✅ HTML essential elements checked"
-        echo "✅ File size analysis completed"
-        echo ""
-        echo "NEXT STEPS"
-        echo "----------"
-        echo "1. Review any warnings above"
-        echo "2. Push fixes if needed"
-        echo "3. Deployment will proceed automatically"
-
   deploy:
-    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    needs: validate
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
     permissions:
       contents: read
@@ -147,79 +14,29 @@ jobs:
       id-token: write
     
     steps:
-    - name: Checkout repository
+    - name: Checkout
       uses: actions/checkout@v4
-      with:
-        repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}
-
-    - name: Setup GitHub Pages
+    
+    - name: Quick validation
+      run: |
+        echo "🔍 Quick check for aesthetiq..."
+        [ -f "index.html" ] && echo "✅ index.html found" || echo "❌ ERROR: No index.html"
+        [ -f "style.css" ] && echo "✅ style.css found" || echo "⚠️  style.css not found (optional)"
+        echo "📁 Total files: $(find . -type f | wc -l)"
+    
+    - name: Setup Pages
       uses: actions/configure-pages@v4
-
-    - name: Upload website files
+    
+    - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
         path: '.'
-
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4
-      with:
-        timeout: 300000  # 5 minute timeout
-
-    - name: Display deployment info
-      run: |
-        echo ""
-        echo "🎉 AESTHETIQ DEPLOYMENT SUCCESSFUL!"
-        echo "==================================="
-        echo ""
-        echo "🌐 Your website is now live at:"
-        echo "   ${{ env.SITE_URL }}"
-        echo ""
-        echo "📊 Deployment Details:"
-        echo "   • Repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}"
-        echo "   • Branch: main"
-        echo "   • Commit: ${{ github.sha }}"
-        echo "   • Deployed by: ${{ github.actor }}"
-        echo "   • Time: $(date)"
-        echo ""
-        echo "⏱️  Please wait 1-2 minutes for the site to propagate."
-        echo ""
-        echo "🔍 To view deployment status:"
-        echo "   1. Go to your repository on GitHub"
-        echo "   2. Click on 'Settings'"
-        echo "   3. Select 'Pages' in the left sidebar"
-        echo ""
-        echo "🚀 To make changes:"
-        echo "   1. Edit your HTML/CSS/JS files"
-        echo "   2. Commit and push to main branch"
-        echo "   3. This workflow will automatically redeploy"
-        echo ""
-        echo "📧 For issues, check:"
-        echo "   • GitHub Actions tab for error details"
-        echo "   • GitHub Pages settings for configuration"
-
-# Optional: Create a preview for pull requests
-  preview:
-    name: PR Preview
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     
-    steps:
-    - name: Checkout PR changes
-      uses: actions/checkout@v4
-      with:
-        repository: ${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}
-        ref: ${{ github.event.pull_request.head.sha }}
-
-    - name: Show PR changes
+    - name: Deploy
+      uses: actions/deploy-pages@v4
+    
+    - name: Success
       run: |
-        echo "🔍 Previewing changes for PR #${{ github.event.pull_request.number }}"
-        echo "Title: ${{ github.event.pull_request.title }}"
-        echo "Author: ${{ github.event.pull_request.user.login }}"
-        echo ""
-        echo "Modified files:"
-        git diff --name-only origin/main...HEAD 2>/dev/null || echo "Could not get diff list"
-        echo ""
-        echo "To test these changes locally:"
-        echo "1. Check out this branch"
-        echo "2. Open index.html in your browser"
-        echo "3. Test all functionality"
+        echo "🎉 aesthetiq deployed!"
+        echo "🌐 Visit: https://le-arch.github.io/aesthetiq/"
+        echo "⏱️  Available in 1-2 minutes..."
