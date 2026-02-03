@@ -1,0 +1,32 @@
+{
+  "name": "aesthetiq",
+  "version": "1.0.0",
+  "description": "A comprehensive, feature-rich interior design portfolio website with blog, virtual tours, e-commerce shop, and dark mode. Built with pure HTML, CSS, and JavaScript.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/le-arch/aesthetiq.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/le-arch/aesthetiq/issues"
+  },
+  "homepage": "https://github.com/le-arch/aesthetiq#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^17.3.0",
+    "html-validate": "^10.7.0",
+    "stylelint": "^17.1.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
